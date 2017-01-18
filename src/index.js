@@ -2,9 +2,9 @@
 
 /**
 * Get the tokens.
-* 
+*
 * @param {string} pattern
-* 
+*
 * @return {array}
 */
 const getTokens = (pattern) => {
@@ -17,10 +17,10 @@ const getTokens = (pattern) => {
 
 /**
  * Get matches from a regular expression.
- * 
+ *
  * @param  {regexp} expression
  * @param  {string} pattern
- * 
+ *
  * @return {array}
  */
 const getMatches = (expression, pattern) => {
@@ -37,9 +37,9 @@ const getMatches = (expression, pattern) => {
 
 /**
  * Escape special characters from a regular expression.
- * 
+ *
  * @param  {string} pattern
- * 
+ *
  * @return {string}
  */
 const escapeExpression = (pattern) => {
@@ -53,9 +53,9 @@ const escapeExpression = (pattern) => {
 
 /**
 * Build the regular expression needed to match the pattern.
-* 
+*
 * @param {string} pattern
-* 
+*
 * @return {regexp}
 */
 const buildExpression = (pattern) => {
@@ -68,10 +68,10 @@ const buildExpression = (pattern) => {
 
 /**
 * Take a key and value array and convert them into key/value pairs.
-* 
+*
 * @param {array} keys
 * @param {array} values
-* 
+*
 * @return {object}
 */
 const zipObject = (keys, values) => {
@@ -99,14 +99,14 @@ const zipObject = (keys, values) => {
 };
 
 /**
-* Match the route bindings from a url.
-* 
+* Test the route from a url.
+*
 * @param {string} pattern
 * @param {string} url
-* 
+*
 * @return {object}
 */
-const match = (pattern, url) => {
+const test = (pattern, url) => {
 
     // Escape any special characters.
     pattern = escapeExpression(pattern);
@@ -116,10 +116,10 @@ const match = (pattern, url) => {
     let matches = url.match(expression);
 
     if (matches) {
-        matches = matches.splice(1, tokens.length);
+        return true
     }
 
-    return zipObject(tokens, matches);
+    return false
 };
 
-module.exports = match;
+module.exports = test;
