@@ -1,6 +1,6 @@
 {
   "name": "micro-test",
-  "version": "0.0.1",
+  "version": "0.2.0",
   "description": "A simple url test utility for micro based on nblackburn/micro-match",
   "keywords": [
     "url",
