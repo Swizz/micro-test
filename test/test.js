@@ -1,5 +1,5 @@
 const test = require('ava');
-const match = require('../source/index');
+const match = require('../src/index');
 
 test('get required parameter', t => {
 
