@@ -1,22 +1,19 @@
 {
-    "name": "micro-match",
-    "description": "A simple url matching utility for micro.",
-    "version": "0.1.2",
-    "main": "source/index.js",
-    "scripts": {
-        "test": "ava test --verbose"
-    },
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/nblackburn/micro-match.git"
-    },
-    "keywords": [
-        "url",
-        "micro",
-        "match",
-        "utility"
-    ],
-    "devDependencies": {
-        "ava": "^0.17.0"
-    }
+  "name": "micro-test-route",
+  "version": "0.2.0",
+  "description": "A simple url test utility for micro based on nblackburn/micro-match",
+  "keywords": [
+    "url",
+    "micro",
+    "route",
+    "routing",
+    "utility"
+  ],
+  "author": "Swizz <gerodel.quentin@gmail.com>",
+  "license": "MIT",
+  "repository": "git@github.com:Swizz/micro-test.git",
+  "main": "src/index.js",
+  "devDependencies": {
+    "ava": "^0.17.0"
+  }
 }
