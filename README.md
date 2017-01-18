@@ -8,16 +8,16 @@ A simple url testing utility for micro.
 To install micro test, simply run the following command in your package manager.
 
 ```bash
-yarn add micro-test
+yarn add micro-test-route
 ```
 ```bash
-npm install -g micro-test
+npm install -g micro-test-route
 ```
 
 Once you have installed micro test, simply include it in your project like so...
 
 ```javascript
-const test = require('micro-test');
+const test = require('micro-test-route');
 ```
 
 ## Usage
