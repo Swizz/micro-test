@@ -1,16 +1,42 @@
 const test = require('ava');
-const match = require('../src/index');
+const microTest = require('../src/index');
 
-test('get required parameter', t => {
+test('simple url', t => {
 
-    const {version, id} = match('/api/:version?/users/:id', '/api/v1/users/1');
+    t.true(
+      microTest('/api/users/', '/api/users/')
+    );
 
-    t.true(id === '1');
+    t.false(
+      microTest('/api/users/', '/api/user/')
+    );
+
 });
 
-test('get optional parameter', t => {
+test('url with parameters', t => {
 
-    const {version, id} = match('/api/:version?/users/:id', '/api/v1/users/1');
+    t.true(
+      microTest('/api/:version/users/:id', '/api/v1/users/1')
+    );
+    
+    t.false(
+      microTest('/api/:version/users/:id', '/api/v1/users/')
+    );
 
-    t.true(version === 'v1');
+});
+
+test('url with optional parameters', t => {
+
+    t.true(
+      microTest('/api/:version?/users/:id', '/api/v1/users/1')
+    );
+
+    t.true(
+      microTest('/api/:version?/users/:id', '/api/users/1')
+    );
+
+    t.false(
+      microTest('/api/:version?/users/:id', '/api/v1/users/')
+    );
+
 });
